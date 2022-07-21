@@ -21,7 +21,19 @@ int main() {
     for(int i=0; i<N; i++)
         cin >> dir[i] >> dis[i];
     int x=0, y=0, cnt = 0;
-    dx[4] = {1, 0, -1, 0}, dy[4] = {0, -1, 0, 1};
+    int dx[4] = {1, 0, -1, 0}, dy[4] = {0, -1, 0, 1};
 
-    for(int i=0; )
+    for(int i=0; i < N; i++) {
+        int dire = char_to_num(dir[i]);
+        for(int j=0; j<dis[i]; j++) {
+            x = x + dx[dire], y = y + dy[dire];
+            cnt++;
+            if(x == 0 && y == 0) {
+                cout << cnt;
+                return 0;
+            }
+        }
+    }
+    cout << -1;
+    return 0;
 }
